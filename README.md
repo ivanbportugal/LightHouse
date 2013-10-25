@@ -10,6 +10,8 @@ I'm not sure if this project can help someone but if it does, feel free to clone
 4. [gmaps](http://hpneo.github.io/gmaps/): Dead-simple Google maps API.
 5. [jQueryFileUpload](http://blueimp.github.io/jQuery-File-Upload/): Now it's a file server too with nice image previews.
 
+For the tracker (gmaps) portion, you may have to just create your own solution. For me, I have GPS coordinates that are uploaded to a public (secure) server and I poll that directory via FTP. Eh, the whole point of that was to get to know Google maps on a more intimate level so mission accomplished. Feel free to use what I have to help you develop. :)
+
 ---
 ![alt tag](/LightHouse1.png)
 ---
