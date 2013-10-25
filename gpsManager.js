@@ -4,6 +4,8 @@ var jsftp = require('jsftp');
 var fs = require('fs');
 var async = require('async');
 
+var conf = require('./gpsCreds');
+
 var gpsIsDirty = true;
 
 module.exports = function (app) {
@@ -27,7 +29,10 @@ module.exports = function (app) {
 // Periodically download GPS files
 function downloadFiles() {
 
-    
+    var host = conf.creds.host;
+    var port = conf.creds.port;
+    var user = conf.creds.user`;
+    var pass = conf.creds.pass;
 
     console.log("Connecting to FTP server. Downloading GPS files...");
 
