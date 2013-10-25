@@ -27,10 +27,7 @@ module.exports = function (app) {
 // Periodically download GPS files
 function downloadFiles() {
 
-    var host = "lindseyportugal.com"; 
-    var port = 21;
-    var user = "lindsey";
-    var pass = "Ucf1552468!";
+    
 
     console.log("Connecting to FTP server. Downloading GPS files...");
 
