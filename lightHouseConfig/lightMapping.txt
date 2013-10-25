@@ -1,0 +1,10 @@
+{
+    "lightCodes": {
+        "Bedroom": "a1",
+        "Bathroom": "a2",
+        "Entrance": "a3",
+        "Front Door": "a4",
+        "Family": "a5",
+        "Kitchen": "a6"
+    }
+}

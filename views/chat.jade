@@ -1,0 +1,37 @@
+extends angularLayout
+
+block head
+    link(rel="stylesheet", href="/css/chat.css")
+        
+block content
+    div(class="container", ng-controller="ChatController")
+        .page-header
+            h1 Forgetful Gossip Room
+            h5 Meaning, your messages are not tracked...
+        .row
+            .span3
+                ul(class="nav nav-list well")
+                    li(class="nav-header") People who think they are in the loop
+                    li(ng-repeat="user in roster", ng-bind="user")
+            .span9
+                table(class="table table-striped table-bordered")
+                    thead
+                        tr
+                            th(class="span2") Gossip Source
+                            th(class="span7") The Word On The Street
+                    tbody
+                        tr(ng-repeat="msg in messages")
+                            td(class="span2", ng-bind="msg.name")
+                            td(class="span7", ng-bind="msg.text")
+                        
+                div(class="row controls")
+                    form(ng-submit="send()")
+                        .span2
+                            input(type="text", class="input-block-level", ng-model="name", ng-change="setName()", placeholder="Your Secret Name")
+                        div(class="input-append span7")
+                            input(type="text", class="span6", ng-model="text", placeholder="Your Gossip")
+                            input(type="submit", class="span1 btn btn-primary", value="Send", ng-disabled="!text")
+
+block footer
+    script(type="text/javascript", src="/socket.io/socket.io.js")
+    script(type="text/javascript", src="/js/chat.js")

@@ -1,0 +1,18 @@
+extends layout
+
+block head
+	link(rel='stylesheet', href='/css/custom.css')
+	link(rel='stylesheet', href='/css/chat.css')
+
+block content
+	div
+		div(class="alert-message alert alert-success hide") Command Sent!
+		form(if="theForm", class="form", action="/activate",method="post")
+			-var ob = JSON.parse(lightMapping).lightCodes
+			-for(var prop in ob)
+				.lightElem
+					h4 #{prop}
+					button(type="submit", class="btn btn-large btn-success", name="command", value="#{ob[prop]} on") On
+					button(type="submit", class="btn btn-large btn-danger", name="command", value="#{ob[prop]} off") Off
+					button(type="submit", class="btn btn-large btn-warning", name="command", value="#{ob[prop]} bright") Bright
+					button(type="submit", class="btn btn-large btn-info", name="command", value="#{ob[prop]} dim") Dim

@@ -1,0 +1,46 @@
+doctype 5
+html(lang="en", ng-app)
+	head
+		title #{title}
+		meta(name="description", content="#{description}")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet", href="/css/bootstrap.min.css")
+		link(rel="stylesheet", href="/css/bootstrap-responsive.min.css")
+
+		link(rel="shortcut icon", href="favicon.ico?v=2")
+
+		//- Googliness
+		meta(name="mobile-web-app-capable", content="yes")
+		link(rel="shortcut icon", sizes="144x144", href="/apple-touch-icon-144x144.png")
+
+		//- Apple-ness
+		meta(name="apple-mobile-web-app-capable", content="yes")
+		link(rel="apple-touch-icon", href="/apple-touch-icon.png")
+		link(rel="apple-touch-icon", sizes="72x72", href="/apple-touch-icon-72x72.png")
+		link(rel="apple-touch-icon", sizes="114x114", href="/apple-touch-icon-114x114.png")
+		link(rel="apple-touch-icon", sizes="144x144", href="/apple-touch-icon-144x144.png")
+		link(rel="apple-touch-startup-image", href="/apple-touch-icon-144x144.png")
+
+		block head
+
+	body
+		div(class="navbar navbar-fixed-top navbar-inverse")
+			.navbar-inner
+				.container
+					a.brand(href="#") Light House
+					ul(class="nav")
+						li(class="homeMenu")
+							a(href="/") Home
+						li(class="chatMenu")
+							a(href="/chat") Chat
+						li(class="trackerMenu")
+							a(href="/tracker") Tracker
+						li(class="uploadsMenu")
+							a(href="/files") Files
+		block content
+
+		script(type="text/javascript", src="/js/jquery.min.js")
+		script(type="text/javascript", src="/js/bootstrap.min.js")
+		script(type="text/javascript", src="/js/angular.min.js")
+		script(type="text/javascript", src="/js/common.js")
+		block footer

@@ -1,0 +1,4 @@
+body{padding-top:60px;background-color:#eee}
+html,body{height:100%;overflow:hidden}
+#map{width:100%;min-height:200px;min-width:320px;max-width:1400px;max-height:1400px;padding:0;border:2px solid #333}
+img{max-width:none}

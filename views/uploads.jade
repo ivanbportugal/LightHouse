@@ -1,0 +1,34 @@
+extends layout
+
+block head
+    link(rel="stylesheet", type="text/css", href="css/jquery.fileupload.css")
+    link(rel="stylesheet", type="text/css", href="css/jquery.fileupload-ui.css")
+    link(rel="stylesheet", type="text/css", href="css/upload.css")
+
+block content
+    .page-header
+        h1 Castle (of files) In The Cloud
+        h5 Just drag and drop any file you want to send to the cloud within the dotted area.
+    
+    form(id="location_upload", action="/upload", method="post")
+        div(id="gallery_dropzone", class="fileupload-buttonbar")
+            span(class="btn fileinput-button")
+                span Old School Uploader
+                input(id="location_gallery", type="file", name="gallery[]", multiple)
+            div(id="gallery_progress", class="progressbar", role="progressbar", aria-valuemin="0", aria-valuemax="100")
+                div(class="bar", style="width:0%;")
+            ul(id="upload_gallery_files")
+    
+block footer
+    script(type="text/javascript", src="js/jquery.ui.widget.js")
+    script(type="text/javascript", src="js/load-image.min.js")
+    script(type="text/javascript", src="js/canvas-to-blob.min.js")
+    script(type="text/javascript", src="js/jquery.iframe-transport.js")
+    script(type="text/javascript", src="js/jquery.fileupload.js")
+    script(type="text/javascript", src="js/jquery.fileupload-process.js")
+    script(type="text/javascript", src="js/jquery.fileupload-image.js")
+    script(type="text/javascript", src="js/jquery.fileupload-audio.js")
+    script(type="text/javascript", src="js/jquery.fileupload-video.js")
+    script(type="text/javascript", src="js/jquery.fileupload-validate.js")
+    script(type="text/javascript", src="js/jquery.fileupload-ui.js")
+    script(type="text/javascript", src="js/upload.js")
