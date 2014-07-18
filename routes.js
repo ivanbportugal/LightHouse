@@ -35,26 +35,26 @@ module.exports = function (app) {
     });
 
     // GPS
-    app.get('/tracker', function (req, res) {
+    // app.get('/tracker', function (req, res) {
         
-        var daysArray = [];
-        for(i = 0; i < app.jsonFromCsv.length; i++){
-            daysArray.push(app.jsonFromCsv[i].date);
-        }
+    //     var daysArray = [];
+    //     for(i = 0; i < app.jsonFromCsv.length; i++){
+    //         daysArray.push(app.jsonFromCsv[i].date);
+    //     }
 
-        function descending( a, b ) {
-            return b - a;
-        }
+    //     function descending( a, b ) {
+    //         return b - a;
+    //     }
          
-        daysArray.sort( descending );
+    //     daysArray.sort( descending );
 
-        res.render("tracker", {title: 'GPS tracker', description: 'Ivan\'s travels', days: daysArray});
-    });
+    //     res.render("tracker", {title: 'GPS tracker', description: 'Ivan\'s travels', days: daysArray});
+    // });
 
-    app.post('/dailyPosition', function(req, res){
+    // app.post('/dailyPosition', function(req, res){
         
-        res.send(JSON.stringify(app.jsonFromCsv));
-    });
+    //     res.send(JSON.stringify(app.jsonFromCsv));
+    // });
     // End GPS
 };
 

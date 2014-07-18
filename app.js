@@ -58,7 +58,7 @@ fs.readFile('./lightHouseConfig/lightMapping.txt', function (err, data) {
 require('./routes')(app);
 
 // Other apps
-require('./gpsManager')(app);
+// require('./gpsManager')(app);
 require('./uploadManager')(app);
 
 var isWin = !!process.platform.match(/^win/);

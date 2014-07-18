@@ -21,6 +21,28 @@ html
     link(rel="apple-touch-icon", sizes="144x144", href="/apple-touch-icon-144x144.png")
     link(rel="apple-touch-startup-image", href="/apple-touch-icon-144x144.png")
 
+    |<script type="text/javascript">
+    |(function(document,navigator,standalone) {
+    |    // prevents links from apps from oppening in mobile safari
+    |    // this javascript must be the first script in your <head>
+    |    if ((standalone in navigator) && navigator[standalone]) {
+    |        var curnode, location=document.location, stop=/^(a|html)$/i;
+    |        document.addEventListener('click', function(e) {
+    |            curnode=e.target;
+    |            while (!(stop).test(curnode.nodeName)) {
+    |                curnode=curnode.parentNode;
+    |            }
+    |            // Condidions to do this only on links to your own app
+    |            // if you want all links, use if('href' in curnode) instead.
+    |            if('href' in curnode && ( curnode.href.indexOf('http') || ~curnode.href.indexOf(location.host) ) ) {
+    |                e.preventDefault();
+    |                location.href = curnode.href;
+    |            }
+    |        },false);
+    |    }
+    |})(document,window.navigator,'standalone');
+    |</script>
+
     link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
     script(src='/js/jquery.min.js')
@@ -37,8 +59,8 @@ html
                       a(href="/") Home
                   li(class="chatMenu")
                       a(href="/chat") Chat
-                  li(class="trackerMenu")
-                      a(href="/tracker") Tracker
+                  //- li(class="trackerMenu")
+                  //-     a(href="/tracker") Tracker
                   li(class="uploadsMenu")
                       a(href="/files") Files
     .container
